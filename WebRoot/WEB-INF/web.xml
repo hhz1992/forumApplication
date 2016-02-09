@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<filter>
+	   <filter-name>struts2</filter-name>
+	   <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>struts2</filter-name>
+	    <url-pattern>/avatar/*</url-pattern><!--默认只处理*.action的请求  -->
+	</filter-mapping>
+	<!-- 设置前台保护过滤器 -->
+	<filter>
+	   <filter-name>webSafe</filter-name>
+	   <filter-class>com.tjpu.wtf.filter.WebSafeFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>webSafe</filter-name>
+	    <url-pattern>/bbs/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<filter>
+	   <filter-name>Filter</filter-name>
+	   <filter-class>com.tjpu.wtf.filter.EncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>Filter</filter-name>
+	    <url-pattern>/*</url-pattern><!--所有的请求路径  -->
+	</filter-mapping>
+	<servlet>
+	  <servlet-name>ConnectionServlet</servlet-name>
+	  <servlet-class>net.fckeditor.connector.ConnectorServlet</servlet-class>
+	  <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>ConnectionServlet</servlet-name>
+	<url-pattern>/fackeditor/editor/filemanager/connectors/*</url-pattern>
+	</servlet-mapping>
+	
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>managerLoginServlet</servlet-name>
+    <servlet-class>com.tjpu.wtf.mngweb.ManagerLoginServlet</servlet-class>
+  </servlet>
+  <!-- 验证码 -->
+  	<servlet>
+		<servlet-name>checkCodeServlet</servlet-name>
+		<servlet-class>com.tjpu.wtf.util.CheckCodeServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+  <servlet>
+  
+    <servlet-name>managerServlet</servlet-name>
+    <servlet-class>com.tjpu.wtf.mngweb.ManagerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>memberRegisteServlet</servlet-name>
+    <servlet-class>com.tjpu.wtf.mngweb.MemberRegisteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>memberLoginServlet</servlet-name>
+    <servlet-class>com.tjpu.wtf.mngweb.MemberLoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>memberManagerSerlet</servlet-name>
+    <servlet-class>com.tjpu.wtf.mngweb.MemberManagerSerlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>categoryServlet</servlet-name>
+    <servlet-class>com.tjpu.wtf.mngweb.CategoryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>forumManagerServlet</servlet-name>
+    <servlet-class>com.tjpu.wtf.mngweb.ForumManagerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>webIndexServlet</servlet-name>
+    <servlet-class>com.tjpu.wtf.mngweb.WebIndexServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>topicServlet</servlet-name>
+    <servlet-class>com.tjpu.wtf.mngweb.TopicServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>replyServlet</servlet-name>
+    <servlet-class>com.tjpu.wtf.mngweb.ReplyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.tjpu.wtf.mngweb.UploadServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>checkCodeServlet</servlet-name>
+		<url-pattern>/checkcode.png</url-pattern>
+	</servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>managerLoginServlet</servlet-name>
+    <url-pattern>/mng/managerLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>managerServlet</servlet-name>
+    <url-pattern>/admin/managerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>memberRegisteServlet</servlet-name>
+    <url-pattern>/user/memberRegisteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>memberLoginServlet</servlet-name>
+    <url-pattern>/user/memberLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>memberManagerSerlet</servlet-name>
+    <url-pattern>/user/memberManagerSerlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>categoryServlet</servlet-name>
+    <url-pattern>/user/categoryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>forumManagerServlet</servlet-name>
+    <url-pattern>/user/forumManagerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>webIndexServlet</servlet-name>
+    <url-pattern>/webIndexServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>topicServlet</servlet-name>
+    <url-pattern>/user/topicServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>replyServlet</servlet-name>
+    <url-pattern>/user/replyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/MyStructs2/UploadServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

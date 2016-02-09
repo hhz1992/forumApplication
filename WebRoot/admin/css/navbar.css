@@ -1,0 +1,82 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+body {
+	background-color: D4ECFC;
+	margin:0px 0px 0px 0px
+}
+
+/*.tit为每个菜单的标题样式  .list 为菜单项目的样式*/
+#menu{width:162px;border:1px solid #B7DFE2}
+.tit , .list{ width:162px; /*菜单的宽度*/} 
+ 
+/*======================================标题部分===============================*/
+.tit {/*菜单标题的样式*/
+	height: 25px;
+	color: #000;
+	background: url(../menu_imgs/menu_bg.jpg) repeat-x;
+	text-indent: 15px;
+	font-family: "lucida Grande", verdana, lucida, Arial, helvetica, "宋体", sans-serif;
+	font-size: 12px;
+	line-height: 25px;
+	font-weight: bold;
+}
+.tit a,.tit a:link , .tit a hover{/*菜单标题中的链接的样式，共同的部分*/
+	color: #1B3C4D;
+	display:block;
+	text-decoration:none;
+	width:162px;
+	background-repeat: no-repeat;
+	background-position: 145px 6px;
+	cursor: pointer;
+}
+.tit a:hover{
+	color: #FFF;/*鼠标经过时的颜色*/
+}
+/*====================
+	菜单标题中的箭头图片
+======================*/
+.on{
+	background-image: url(../menu_imgs/arrow_up.gif);/*向上的箭头-暗色*/
+}
+.on:hover{
+	background-image: url(../menu_imgs/arrow_up_o.gif);/*向上的箭头-亮色*/
+}
+.off{
+	background-image: url(../menu_imgs/arrow_down.gif);/*向下的箭头-暗色*/
+}
+.off:hover{
+	background-image: url(../menu_imgs/arrow_down_o.gif);/*向下的箭头-亮色*/
+}
+
+/*====================
+	菜单列表的样式
+======================*/
+.list{
+	font-size: 12px;
+	color: #002280;
+	width: 162px;/*宽度*/
+	border: 1px none #CCC;
+	text-align:left;
+	padding:0px 0px;
+	voice-family:"\"}\"";
+	voice-family:inherit;
+	overflow:hidden;
+	line-height: 25px;
+	background-color: #EDF7FF;
+}
+
+.list ul{
+	list-style-type:none;
+	margin:0;
+	padding: 0 0 0 15px;
+}
+.list li{
+	padding-left:18px;
+	background: url(../menu_imgs/inc1.gif) no-repeat left center;
+}
+/*============菜单链接的样式==============*/
+.list a{color:#002280;text-decoration:none;}
+.list a:link{color:#002280;}
+.list a:hover{color:#296DC1;text-decoration:underline;}
+.list a:active{color:#296DC1;}
